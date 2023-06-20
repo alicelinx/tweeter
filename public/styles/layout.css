@@ -30,3 +30,9 @@ body {
   text-align: center;
   margin: auto;
 }
+
+p#username {
+  font-size: 36px;
+  margin: 10px 0px 50px 0px;
+}
+
