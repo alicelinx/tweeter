@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input#tweet-text, input#tweet-text:focus {
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 4px solid #545149;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  font-weight: bold;
+}
+
+div#button-counter {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+button {
+  font-family: 'Bungee', cursive;
+  color: white;
+  border: none;
+  background-color: #4056A1;
+  padding: 3px 8px;
+}
