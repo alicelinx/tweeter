@@ -11,10 +11,20 @@ section.tweet-container:hover {
 
 }
 
+section.tweet-container header div {
+  display: flex;
+  justify-content: center;
+}
+
 section.tweet-container header {
-  margin: 10px 13px 20px 13px;
+  margin: 8px 13px 30px 13px;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+}
+
+section.tweet-container div.photo-name {
+  padding: 0px
 }
 
 section.tweet-container div {
@@ -32,6 +42,17 @@ section.tweet-container footer {
 a.user-id {
   color: lightgrey;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+a.user-name {
+  display: flex;
+  align-items: center;
+}
+
+div.photo-name img {
+  height: 45px;
 }
 
 i.fa-solid.fa-flag:hover,
