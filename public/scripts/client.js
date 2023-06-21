@@ -69,4 +69,31 @@ $(() => {  // more modern than $(document).ready(function() {
 
   renderTweets(data);
 
+
+  // grab the form from DOM
+  const $newTweetForm = $('.new-tweet-form');
+
+  // add an event listener that listens for the submit event
+  $newTweetForm.on('submit', (event) => {
+
+    // prevent the default behaviour of the submit event (data submission and page refresh)
+    event.preventDefault();
+
+    // serialize the form data and send it to the server as a query string
+    const data = $newTweetForm.serialize();
+
+    // create an AJAX POST request that sends the form data to the server
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: 'POST',
+      data: data,
+      success: () => {
+        console.log('request received');
+      }
+    });
+
+  });
+
+
+
 });
