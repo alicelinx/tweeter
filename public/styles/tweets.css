@@ -12,9 +12,13 @@ section.tweet-container:hover {
 }
 
 section.tweet-container header {
-  margin: 10px 13px 15px 13px;
+  margin: 10px 13px 20px 13px;
   display: flex;
   justify-content: space-between;
+}
+
+section.tweet-container div {
+  padding: 10px 13px 25px 13px;
 }
 
 section.tweet-container footer {
@@ -23,10 +27,6 @@ section.tweet-container footer {
   justify-content: space-between;
   padding: 10px;
   font-size:medium;
-}
-
-a.tweet-content {
-  padding-left: 15px;
 }
 
 a.user-id {
