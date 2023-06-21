@@ -6,32 +6,6 @@
 
 $(() => {  // more modern than $(document).ready(function() {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-  ];
-
   const createTweetElement = function(tweet) {
 
     let $tweet = `
@@ -47,18 +21,21 @@ $(() => {  // more modern than $(document).ready(function() {
             <a class="tweet-content">${tweet.content.text}</a>
           </div>
         <footer>
-          <a>${tweet.created_at}</a>
+          <a>${timeago.format(tweet.created_at)}</a>
           <a><i class="fa-solid fa-flag"></i>&#160&#160<i class="fa-solid fa-retweet"></i>&#160&#160<i class="fa-solid fa-heart"></i></a>
         </footer>
       </article>
     `;
 
     // takes return value and appends it to the tweets container
-    $('.tweet-container').append($tweet);
+    $('.tweet-container').prepend($tweet);
 
   };
 
   const renderTweets = function(tweets) {
+
+    // empty the container
+    $('.tweet-container').empty();
 
     // loops through tweets
     for (let tweet of tweets) {
@@ -67,7 +44,20 @@ $(() => {  // more modern than $(document).ready(function() {
     }
   };
 
-  renderTweets(data);
+
+  // fetch tweets
+  const loadTweets = function() {
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: "GET",
+      success: (tweetItems) => {
+        $('textarea').val('');
+        renderTweets(tweetItems);
+      }
+    });
+  };
+
+  loadTweets();
 
 
   // grab the form from DOM
@@ -79,21 +69,32 @@ $(() => {  // more modern than $(document).ready(function() {
     // prevent the default behaviour of the submit event (data submission and page refresh)
     event.preventDefault();
 
-    // serialize the form data and send it to the server as a query string
-    const data = $newTweetForm.serialize();
+    let tweetLength = $('#tweet-text').val().length;
+    if (tweetLength > 140) {
+      alert('Tweet exceeds limit!');
+      return;
+    }
 
-    // create an AJAX POST request that sends the form data to the server
-    $.ajax({
-      url: 'http://localhost:8080/tweets',
-      method: 'POST',
-      data: data,
-      success: () => {
-        console.log('request received');
-      }
-    });
+    if (!tweetLength) {
+      alert('You must be humming something...');
+      return;
+
+    } else {
+      // serialize the form data and send it to the server as a query string
+      const data = $newTweetForm.serialize();
+
+      // create an AJAX POST request that sends the form data to the server
+      $.ajax({
+        url: 'http://localhost:8080/tweets',
+        method: 'POST',
+        data: data,
+        success: () => {
+          loadTweets();
+        }
+      });
+
+    }
 
   });
-
-
 
 });
