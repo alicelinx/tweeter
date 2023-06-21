@@ -33,6 +33,10 @@
 
     <!-- angle double down (font awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js" integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   </head>
 
   <body>
@@ -55,11 +59,10 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container" id="tweets-container">
+    <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-
-        <form method="POST" action="/tweets/">
+        <form class="new-tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div id="button-counter">
@@ -67,50 +70,10 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-
-      </section>
-    </br>
-    </br>
-      <section class="tweet-container">
-        <article class="tweet">
-          <header>
-            <div class="photo-name">
-              <i class="fa-solid fa-user-astronaut"></i>
-              <a>&#160&#160Newton</a>
-            </div>
-            <a class="user-id">@Sirlsaac</a>
-          </header>
-          <div>
-            <a class="tweet-content">If I have seen further it is by standing on the shoulders of giants</a>
-          </div>
-          <footer>
-            <a>3 days ago</a>
-            <a><i class="fa-solid fa-flag"></i>&#160&#160<i class="fa-solid fa-retweet"></i>&#160&#160<i class="fa-solid fa-heart"></i></a>
-          </footer>
-        </article>
       </section>
 
-    </br>
-    <section class="tweet-container">
-      <article class="tweet">
-        <header>
-          <div class="photo-name">
-            <i class="fa-solid fa-user-astronaut"></i>
-            <a>&#160&#160Rhoda Jacobs</a>
-          </div> 
-          <a class="user-id">@MrsJacobs</a>
-        </header>
-        <div>
-          <a class="tweet-content">Hello world!</a>
-        </div>
-        <footer>
-          <a>10 days ago</a>
-          <a><i class="fa-solid fa-flag"></i>&#160&#160<i class="fa-solid fa-retweet"></i>&#160&#160<i class="fa-solid fa-heart"></i></a>
-        </footer>
-      </article>
-    </section>
-
-    </br>
-    </main>
+      <section class="tweet-container"></section>
+    
   </body>
+
 </html>

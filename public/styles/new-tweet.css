@@ -28,3 +28,7 @@ button {
   background-color: #4056A1;
   padding: 3px 8px;
 }
+
+.new-tweet {
+  margin-bottom: 60px;
+}
