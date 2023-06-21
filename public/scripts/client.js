@@ -8,6 +8,12 @@ $(() => {  // more modern than $(document).ready(function() {
 
   const createTweetElement = function(tweet) {
 
+    const escape = function(str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
     let $tweet = `
       <article class="tweet">
         <header>
@@ -18,7 +24,7 @@ $(() => {  // more modern than $(document).ready(function() {
           <a class="user-id">${tweet.user.handle}</a>
         </header>
           <div>
-            <a class="tweet-content">${tweet.content.text}</a>
+            <a class="tweet-content">${escape(tweet.content.text)}</a>
           </div>
         <footer>
           <a>${timeago.format(tweet.created_at)}</a>
