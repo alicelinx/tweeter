@@ -33,3 +33,13 @@ button {
 .new-tweet {
   margin-bottom: 60px;
 }
+
+.no-content,
+.exceeds-limit {
+  font-size: large;
+  padding: 10px;
+  border: 3px double red;
+  color: red;
+  margin-bottom: 15px;
+  display: none;
+}

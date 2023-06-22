@@ -58,6 +58,7 @@ $(() => {  // more modern than $(document).ready(function() {
       method: "GET",
       success: (tweetItems) => {
         $('textarea').val('');
+        $('.counter').val('140');
         renderTweets(tweetItems);
       }
     });
@@ -77,29 +78,34 @@ $(() => {  // more modern than $(document).ready(function() {
 
     let tweetLength = $('#tweet-text').val().length;
     if (tweetLength > 140) {
-      alert('Tweet exceeds limit!');
-      return;
+      if ($('.exceeds-limit').first().is(':hidden')) {
+        return $('.exceeds-limit').slideDown('slow');
+      }
+      return $('.exceeds-limit');
     }
 
     if (!tweetLength) {
-      alert('You must be humming something...');
-      return;
+      if ($('.no-content').first().is(':hidden')) {
+        return $('.no-content').slideDown('slow');
+      }
+      return $('.no-content');
+    };
+    // serialize the form data and send it to the server as a query string
+    const data = $newTweetForm.serialize();
 
-    } else {
-      // serialize the form data and send it to the server as a query string
-      const data = $newTweetForm.serialize();
+    // create an AJAX POST request that sends the form data to the server
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: 'POST',
+      data: data,
+      success: () => {
+        loadTweets();
+        $('.exceeds-limit').hide();
+        $('.no-content').hide();
+      }
+    });
 
-      // create an AJAX POST request that sends the form data to the server
-      $.ajax({
-        url: 'http://localhost:8080/tweets',
-        method: 'POST',
-        data: data,
-        success: () => {
-          loadTweets();
-        }
-      });
 
-    }
 
   });
 
