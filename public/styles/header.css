@@ -2,6 +2,7 @@ header.user {
   font-family: 'Source Sans 3', sans-serif;
   color: white;
   display: flex;
+  padding-top: 120px;
   height: 520px;
   width: 100%;
   justify-content: flex-end;

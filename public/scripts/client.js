@@ -5,7 +5,6 @@
  */
 
 $(() => {  // more modern than $(document).ready(function() {
-
   const createTweetElement = function(tweet) {
 
     const escape = function(str) {
@@ -79,17 +78,19 @@ $(() => {  // more modern than $(document).ready(function() {
     let tweetLength = $('#tweet-text').val().length;
     if (tweetLength > 140) {
       if ($('.exceeds-limit').first().is(':hidden')) {
+        $('.no-content').slideUp();
         return $('.exceeds-limit').slideDown('slow');
       }
-      return $('.exceeds-limit');
+      return;
     }
 
     if (!tweetLength) {
       if ($('.no-content').first().is(':hidden')) {
+        $('.exceeds-limit').slideUp();
         return $('.no-content').slideDown('slow');
       }
-      return $('.no-content');
-    };
+      return;
+    }
     // serialize the form data and send it to the server as a query string
     const data = $newTweetForm.serialize();
 
@@ -104,9 +105,15 @@ $(() => {  // more modern than $(document).ready(function() {
         $('.no-content').hide();
       }
     });
+  });
 
 
-
+  // stretch
+  $('.write-new-tweet').on('click', () => {
+    if (!$('.new-tweet-form').first().is(':hidden')) {
+      return $('.new-tweet-form').slideUp('slow');
+    }
+    return $('.new-tweet-form').slideDown('slow');
   });
 
 });

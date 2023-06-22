@@ -18,6 +18,7 @@ span {
 #write-new-tweet {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .fa-solid {
