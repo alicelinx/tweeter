@@ -1,8 +1,22 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. The app is built with HTML, CSS, JS, jQuery and AJAX.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Final Product
+
+- Main page
+!["Screenshot of Tweeter main page"](https://github.com/alicelinx/tweeter/blob/master/docs/tweeter.png)
+
+- New tweet form & scroll to top botton
+!["Screenshot of new tweet form & scrool to top button page"](https://github.com/alicelinx/tweeter/blob/master/docs/new-tweet-form.png)
+
+- Responsive design & error messages
+!["Screenshot of tablet view & error message page"](https://github.com/alicelinx/tweeter/blob/master/docs/error-message.png)
+
+## Extra Features
+
+- Form toggle
+- Scroll to top botton
 
 ## Getting Started
 
@@ -16,3 +30,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- jQuery
+- AJAX
