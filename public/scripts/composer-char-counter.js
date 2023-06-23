@@ -10,6 +10,25 @@ $(document).ready(function() {
     } else {
       counterHtml.style.color = '';
     }
-
   });
+
+  // stretch;
+  const scrollTopBtn = $('i.fa-solid.fa-circle-chevron-up');
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() > 1) {
+      $('#write-new-tweet').hide();
+      return scrollTopBtn.show();
+    } else {
+      $('#write-new-tweet').show();
+      return scrollTopBtn.hide();
+    }
+  });
+
+  scrollTopBtn.on('click', function() {
+    if ($(window).scrollTop() > 1) {
+      $(window).scrollTop(0);
+      return $('.new-tweet-form').slideDown('slow');
+    }
+  });
+
 });

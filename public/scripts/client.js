@@ -7,6 +7,7 @@
 $(() => {  // more modern than $(document).ready(function() {
   const createTweetElement = function(tweet) {
 
+    // prevent cross-site scripting
     const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
@@ -34,7 +35,6 @@ $(() => {  // more modern than $(document).ready(function() {
 
     // takes return value and appends it to the tweets container
     $('.tweet-container').prepend($tweet);
-
   };
 
   const renderTweets = function(tweets) {
@@ -48,7 +48,6 @@ $(() => {  // more modern than $(document).ready(function() {
       createTweetElement(tweet);
     }
   };
-
 
   // fetch tweets
   const loadTweets = function() {
@@ -65,12 +64,11 @@ $(() => {  // more modern than $(document).ready(function() {
 
   loadTweets();
 
-
   // grab the form from DOM
   const $newTweetForm = $('.new-tweet-form');
 
   // add an event listener that listens for the submit event
-  $newTweetForm.on('submit', (event) => {
+  $newTweetForm.on('submit', function(event) {
 
     // prevent the default behaviour of the submit event (data submission and page refresh)
     event.preventDefault();
@@ -107,13 +105,11 @@ $(() => {  // more modern than $(document).ready(function() {
     });
   });
 
-
   // stretch
-  $('.write-new-tweet').on('click', () => {
+  $('.write-new-tweet').on('click', function() {
     if (!$('.new-tweet-form').first().is(':hidden')) {
       return $('.new-tweet-form').slideUp('slow');
     }
     return $('.new-tweet-form').slideDown('slow');
   });
-
 });

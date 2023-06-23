@@ -18,6 +18,9 @@ span {
 #write-new-tweet {
   display: flex;
   flex-direction: column;
+}
+
+.write-new-tweet {
   cursor: pointer;
 }
 

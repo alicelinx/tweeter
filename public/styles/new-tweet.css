@@ -13,17 +13,12 @@ textarea#tweet-text, textarea#tweet-text:focus {
   background-color: #f4f1ec;
   border: none;
   border-bottom: 4px solid #545149;
-  margin-bottom: 15px;
+  margin: 58px 0 15px 0;
   padding: 0;
   outline: none;
   font-weight: bold;
   line-height: 0.8;
   resize: none;
-}
-
-label {
-  text-align: left;
-  margin-top: 50px;
 }
 
 div#button-counter {

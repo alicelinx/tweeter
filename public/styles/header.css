@@ -2,7 +2,6 @@ header.user {
   font-family: 'Source Sans 3', sans-serif;
   color: white;
   display: flex;
-  padding-top: 120px;
   height: 520px;
   width: 100%;
   justify-content: flex-end;
@@ -12,3 +11,15 @@ header.user {
   background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
   }
 
+  @media only screen and (min-width: 1024px) {
+    header.user {
+      height: 33%;
+      width: 35%;
+      float: left;
+      line-height: 100%;
+      margin-top: 8em;
+      margin-left: 1.5em;
+      padding-top: 1em;
+      border-radius: 10px;
+    }
+  }
