@@ -7,8 +7,8 @@ Tweeter is a simple, single-page Twitter clone. The app is built with HTML, CSS,
 - Main page
 !["Screenshot of Tweeter main page"](https://github.com/alicelinx/tweeter/blob/master/docs/tweeter.png)
 
-- New tweet form & scroll to top botton
-!["Screenshot of new tweet form & scrool to top button page"](https://github.com/alicelinx/tweeter/blob/master/docs/new-tweet-form.png)
+- New tweet form & scroll to top button
+!["Screenshot of new tweet form & scroll to top button page"](https://github.com/alicelinx/tweeter/blob/master/docs/new-tweet-form.png)
 
 - Responsive design & error messages
 !["Screenshot of tablet view & error message page"](https://github.com/alicelinx/tweeter/blob/master/docs/error-message.png)
@@ -16,7 +16,7 @@ Tweeter is a simple, single-page Twitter clone. The app is built with HTML, CSS,
 ## Extra Features
 
 - Form toggle
-- Scroll to top botton
+- Scroll to top button
 
 ## Getting Started
 
